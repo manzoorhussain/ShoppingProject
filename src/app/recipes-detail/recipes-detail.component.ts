@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesDetailComponent implements OnInit {
 
+  public addRecipeItems:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+  addRecipeItem(){
+    if(this.addRecipeItems==true){
+      this.addRecipeItems=false;
+    }else{
+      this.addRecipeItems=true;
+    }
+    
   }
 
 }

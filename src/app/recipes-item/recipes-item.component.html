@@ -1,1 +1,52 @@
-<p>recipes-item works!</p>
+<!-- app.component.html -->
+<div class="row">
+    <div class="col-xs-12">
+    <h3>Submit Form</h3>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      
+      <!-- Name Field -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          [(ngModel)]="formData.name"
+          name="name"
+          required
+        />
+      </div>
+  
+      <!-- Details Field -->
+      <div class="mb-3">
+        <label for="details" class="form-label">Details</label>
+        <textarea
+          id="details"
+          class="form-control"
+          [(ngModel)]="formData.details"
+          name="details"
+          required
+        ></textarea>
+      </div>
+  
+      <!-- File Upload -->
+      <div class="mb-3">
+        <label for="file" class="form-label">Upload File</label>
+        <input
+          type="file"
+          id="file"
+          class="form-control"
+          (change)="onFileSelected($event)"
+        />
+      </div>
+  
+      <br><br>
+
+      <!-- Save Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+        Save
+      </button>
+    </form>
+    </div>
+  </div>
+  

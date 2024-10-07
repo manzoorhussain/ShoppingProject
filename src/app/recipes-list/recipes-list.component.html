@@ -1,7 +1,7 @@
 <br>
 <div class="row">
     <div class="col-xs-12">
-      <button class="btn btn-success">New Recipe</button>
+      <button class="btn btn-success" (click)="addRecipeItem()">New Recipe</button>
 
     </div>
 
@@ -23,6 +23,8 @@
       </span>
 
     </a>
-    <app-recipes-item></app-recipes-item>
+    <div *ngIf="addRecipeItems">
+    <add-recipes-item></add-recipes-item>
+  </div>
   </div>
 </div>
